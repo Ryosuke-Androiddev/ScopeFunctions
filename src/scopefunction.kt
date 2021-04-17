@@ -16,7 +16,6 @@ fun main(){
         println(number2)
     } ?: println(3)
 
-
     /** this is apply function! */
 
     val person = Person()
@@ -42,4 +41,26 @@ fun main(){
        "Hello world!!"
     }
     println(typeStringReturn) //you can get String Value here from that with function!!
+
+    var numbersList: MutableList<Int> = mutableListOf(1,2,3)
+
+    val listNumber = numbersList.also {
+        println("$it")
+        it.add(4)
+        println("$it")
+        it.remove(2)
+        println("$it")
+    }
+
+    println("original: $numbersList")
+    println("changeList: $listNumber")
+
+    /** run run means let and with!! */
+    val person64: Person? = Person()
+
+    val people = person64?.run {
+        println(name)
+        println(age)
+    }
+
 }
