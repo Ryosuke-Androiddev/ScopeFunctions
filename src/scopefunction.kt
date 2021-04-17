@@ -17,5 +17,29 @@ fun main(){
     } ?: println(3)
 
 
+    /** this is apply function! */
 
+    val person = Person()
+    person.name = "Hello"
+    person.age = 2
+
+    // scope function allows you to write code easily!!!
+    val person2 = Person().apply {
+        name = "Ryosuke"
+        age = 4
+    }
+
+    /** this is with function! you don't have to write this key word!! */
+    with(person){
+        println(name)
+        println(age)
+    }
+
+
+    val typeStringReturn: String = with(person){
+       println(name)
+       println(age)
+       "Hello world!!"
+    }
+    println(typeStringReturn) //you can get String Value here from that with function!!
 }
